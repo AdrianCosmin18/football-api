@@ -59,7 +59,7 @@ public class PlayerServiceTest {
     }
 
     @Test
-    void shouldAddPlayerException(){
+    void shouldAddPlayer(){
 
         Player player = Player.builder().fullName("Cosmin").age(22).build();
 

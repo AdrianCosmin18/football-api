@@ -3,7 +3,6 @@ package com.example.footbalapp.controller;
 
 import com.example.footbalapp.controllers.PlayerController;
 import com.example.footbalapp.models.Player;
-import com.example.footbalapp.repositories.PlayerRepo;
 import com.example.footbalapp.services.PlayerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
@@ -14,7 +13,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -23,27 +21,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+
 
 
 @ExtendWith(MockitoExtension.class)
 public class PlayerControllerTest {
 
-
-
     @Mock
     private PlayerService playerService;
-
-
 
     private MockMvc mockMvc;//realizeaza post-ul
 
     private ObjectMapper mapper = new ObjectMapper();
-
 
     @InjectMocks
     private PlayerController playerControllerTest;
@@ -53,7 +44,7 @@ public class PlayerControllerTest {
         MockitoAnnotations.openMocks(this);
     }
 
-    @Test
+    @Test //eroare, de studiat
     void testGetAllPlayers() throws Exception {
 
         Faker f = new Faker();
